@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PiCam Server</title>
+        <link rel="stylesheet" href='../static/style.css'/>
+    </head>
+    <script>
+        function send(path) {
+            fetch("/send/" + path)
+        }
+    </script>
+    <body>
+
+           <div class=".img-container">
+                <img src="{{ url_for('video_feed') }}">
+            </div>
+
+            <div>
+              <center>
+                <br><br>
+                <button type="button" class="button" onClick="send('KEY_POWER')">POWER</button><br><br>
+                <button type="button" class="button" onClick="send('KEY_UP')">UP</button><br><br>
+                <button type="button" class="button" onClick="send('KEY_LEFT')">LEFT</button>
+                <button type="button" class="button" onClick="send('KEY_OK')">OK</button>
+                <button type="button" class="button" onClick="send('KEY_RIGHT')">RIGHT</button><br><br>
+                <button type="button" class="button" onClick="send('KEY_DOWN')">DOWN</button><br><br>
+                <button type="button" class="button" onClick="send('KEY_CANCEL')">BACK</button>
+                <button type="button" class="button" onClick="send('KEY_EXIT')">HOME</button>
+                <button type="button" class="button" onClick="send('KEY_PLAY')">PLAY</button><br><br>
+                <button type="button" class="button" onClick="send('KEY_MUTE')">MUTE</button>
+             </div>
+    </body>
+</html>
